@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run quick lint fixes, format, then lint-staged
+pnpm -s lint:fix || true
+pnpm -s format || true
+npx --no-install lint-staged || true
