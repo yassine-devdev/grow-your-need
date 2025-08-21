@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Apply Settings Profile: default",
+      "type": "shell",
+      "command": "node .vscode/switch-profile.js default",
+      "problemMatcher": []
+    },
+    {
+      "label": "Apply Settings Profile: strict",
+      "type": "shell",
+      "command": "node .vscode/switch-profile.js strict",
+      "problemMatcher": []
+    },
+    {
+      "label": "Apply Settings Profile: experimental",
+      "type": "shell",
+      "command": "node .vscode/switch-profile.js experimental",
+      "problemMatcher": []
+    }
+  ]
+}

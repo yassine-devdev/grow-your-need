@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "createdBy": "multiverse-generator",
+    "version": 1,
+    "notes": "Declarative profiles - use the switcher script (.vscode/switch-profile.js) or the provided task to apply a profile into settings.json"
+  },
+  "profiles": {
+    "default": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.fixAll.eslint": true
+      },
+      "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+      "eslint.run": "onSave",
+      "tailwindCSS.emmetCompletions": true,
+      "files.exclude": {
+        "**/.next": true,
+        "**/node_modules": true
+      },
+      "search.exclude": {
+        "**/node_modules": true,
+        "**/.next": true
+      },
+      "typescript.tsdk": "node_modules/typescript/lib",
+      "typescript.enablePromptUseWorkspaceTsdk": true,
+      "editor.inlineSuggest.enabled": true,
+      "editor.suggestSelection": "first",
+      "files.watcherExclude": {
+        "**/node_modules/**": true
+      },
+      "terminal.integrated.defaultProfile.windows": "PowerShell"
+    },
+    "strict": {
+      "files.autoSave": "onFocusChange",
+      "editor.formatOnSave": true,
+      "editor.formatOnSaveMode": "modifications",
+      "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
+      },
+      "eslint.run": "onSave",
+      "editor.rulers": [80, 120],
+      "editor.tabSize": 2,
+      "editor.detectIndentation": false,
+      "files.trimTrailingWhitespace": true
+    },
+    "experimental": {
+      "editor.experimental.decorations": true,
+      "editor.inlineSuggest.enabled": true,
+      "editor.suggest.showIcons": true,
+      "typescript.tsdk": "node_modules/typescript/lib",
+      "eslint.enable": true,
+      "extensions.autoUpdate": true,
+      "tailscale.placeholder.experimentalFeature": true
+    }
+    ,
+    "ai": {
+      "editor.inlineSuggest.enabled": true,
+      "editor.suggestSelection": "first",
+      "editor.inlineCompletion.enabled": true,
+      "codeium.enable": true,
+      "github.copilot.enable": true,
+      "github.copilot.experimental.inlineSuggest": true,
+      "editor.quickSuggestions": { "other": true, "comments": false, "strings": true }
+    },
+    "biome": {
+      "editor.defaultFormatter": "biomejs.biome",
+      "editor.formatOnSave": true,
+      "biome.configPath": ".biome.json",
+      "prettier.disable": true,
+      "files.associations": { "*.ts": "typescript" }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.run": "onSave",
+  "tailwindCSS.emmetCompletions": true,
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "files.watcherExclude": {
+    "**/node_modules/**": true
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}

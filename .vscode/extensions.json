@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "visualstudioexptteam.vscodeintellicode",
+    "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker",
+    "biomejs.biome",
+    "codeium.codeium",
+    "github.copilot",
+    "github.copilot-chat",
+    "ms-vscode.powershell",
+    "ms-vscode.vscode-typescript-next"
+  ],
+  "unwantedRecommendations": [
+    "random.auto-theme-changer"
+  ]
+}
