@@ -570,4 +570,164 @@ pnpm run dev:api
       "wcagLevel": "AA",
       "minContrastRatio": 4.5,
       "minTouchTargetSize": 44,
-      "respects
+      "respectsReducedMotion": true,
+      "focusIndicator": {
+        "style": "outline",
+        "color": "var(--color-brand-primary-default)",
+        "offset": "2px"
+      }
+    }
+  },
+  "layout": {
+    "style": "fixed-viewport",
+    "grid": {
+      "gap": "var(--spacing-md)",
+      "breakpoints": {
+        "desktop": { "columns": 12, "minWidth": 1024 },
+        "tablet": { "columns": 8, "minWidth": 768 },
+        "mobile": { "columns": 4, "minWidth": 320 }
+      }
+    },
+    "regions": {
+      "header": {
+        "height": { "desktop": 64, "mobile": 56 },
+        "slots": [
+          { "name": "logo", "align": "start" },
+          { "name": "mainNav", "align": "center", "isDynamic": true },
+          { "name": "utilities", "align": "end", "contains": ["search", "notifications", "profile"] }
+        ]
+      },
+      "sidebars": {
+        "width": { "desktop": 84, "mobile": 68 },
+        "position": { "primary": "right", "secondary": "left" }
+      },
+      "contentArea": {
+        "isScrollable": false,
+        "contentScaling": "fit-to-viewport"
+      },
+      "footer": {
+        "height": { "desktop": 64, "mobile": 60 },
+        "slots": [
+          { "name": "appLauncher", "align": "start" },
+          { "name": "minimizedTray", "align": "end" }
+        ]
+      }
+    },
+    "components": {
+      "card": {
+        "style": "bento",
+        "material": "surface",
+        "effect": "softLayered",
+        "padding": "var(--spacing-lg)"
+      }
+    }
+  },
+  "appLogic": {
+    "roles": {
+      "unificationRule": "A single, unified layout structure is used for all roles. Only content, permissions, and available navigation paths differ.",
+      "definitions": {
+        "provider": { "name": "Provider", "permissions": ["*"] },
+        "school_owner": { "name": "School Owner", "permissions": ["school:*:*"] },
+        "teacher": { "name": "Teacher", "permissions": ["class:read,write", "student:read"] }
+      }
+    },
+    "navigation": {
+      "model": "hierarchical-contextual",
+      "flow": "primarySidebar.select -> updates.headerNav -> headerNav.select -> reveals.secondarySidebar",
+      "map": {
+        "SchoolHub": {
+          "headerTabs": ["School", "Administration", "Teacher", "Student", "Parent", "Individual"],
+          "secondaryNav": {
+            "Teacher": ["Roster", "Attendance", "Assignments", "Grades", "Reports"]
+          }
+        },
+        "CRM": {
+          "headerTabs": ["Leads", "Deals", "Accounts", "Campaigns", "Support", "Reports"],
+          "secondaryNav": {
+            "Deals": ["Pipeline", "Negotiation", "Won", "Lost", "Forecast"]
+          }
+        }
+      }
+    },
+    "features": {
+      "ai": {
+        "isEnabled": true,
+        "philosophy": "AI assists and enhances user workflows but never replaces core manual control.",
+        "useCases": ["predictive_analytics", "concierge_automation", "content_recommendation"]
+      },
+      "manualWorkflows": {
+        "isMandatory": true,
+        "areas": ["crud_operations", "approvals", "financial_overrides", "moderation", "settings"]
+      }
+    },
+    "appLauncher": {
+      "apps": [
+        { "id": "education", "name": "Education" },
+        { "id": "media", "name": "Media" },
+        { "id": "studio", "name": "Studio", "subApps": ["Design", "Video", "Code", "OfficeAI"] },
+        { "id": "gamification", "name": "Gamification" },
+        { "id": "marketplace", "name": "Marketplace" },
+        { "id": "lifestyle", "name": "Lifestyle & Leisure" }
+      ],
+      "interactions": {
+        "onLaunch": {
+          "action": "open_fullscreen_overlay",
+          "animation": "expand-horizontal"
+        },
+        "onMinimize": {
+          "action": "send_to_tray",
+          "persistsState": true
+        },
+        "onSwitch": {
+          "action": "focus_overlay",
+          "method": ["click_launcher_icon", "click_tray_icon"]
+        },
+        "stacking": "z-index, last-opened-on-top"
+      }
+    }
+  },
+  "techStack": {
+    "backend": {
+      "orm": "Prisma",
+      "database": "PostgreSQL",
+      "api": "tRPC"
+    },
+    "frontend": {
+      "framework": "Next.js",
+      "stateManagement": "Zustand"
+    },
+    "realtime": {
+      "protocol": "WebSocket",
+      "library": "Socket.io"
+    },
+    "storage": {
+      "provider": "S3-compatible",
+      "cdn": "Cloudflare"
+    },
+    "telemetry": {
+      "provider": "OpenTelemetry",
+      "trackedEvents": [
+        "nav.primary.select",
+        "nav.header.select",
+        "app.launch",
+        "overlay.minimize",
+        "overlay.restore",
+        "card.interaction"
+      ],
+      "privacyPolicy": "No PII is captured in telemetry events."
+    }
+  }
+}
+
+
+
+
+### Notes
+
+Structure is always the same across roles.
+
+Only content and permissions differ.
+
+This ensures familiar navigation for all users while personalizing the data they see.
+
+Provider, Schools, and Individuals all share the same design foundation.
