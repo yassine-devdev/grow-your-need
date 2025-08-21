@@ -413,7 +413,7 @@ Right Sidebar (Persistent – Main Categories)
 
 | Layer | Technology | Why |
 |-------|------------|-----|
-| **Frontend** | Vite + React + TailwindCSS + ShadCN UI + Framer Motion | Fast dev, responsive, component‑driven, animation‑ready |
+| **Frontend** | Next + React + TailwindCSS + ShadCN UI + Framer Motion | Fast dev, responsive, component‑driven, animation‑ready |
 | **Backend** | Node.js (NestJS) + tRPC + Prisma + PostgreSQL | Type‑safe APIs, ORM, relational data, easy scaling |
 | **Headless CMS** | Strapi (for media, courses, library) | Content editing UI for non‑technical staff |
 | **Auth & RBAC** | Keycloak (Open‑Source IAM) | SSO, OIDC, fine‑grained permissions |
